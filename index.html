@@ -1,0 +1,953 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07130f">
+<meta name="description" content="The Mobile Specialist in Nehru Place, Delhi NCR. Professional mobile screen, battery and charging port repairs with transparent starting prices.">
+<title>The Mobile Specialist | Premium Device Care</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#07130f;
+  --panel:#0d1e18;
+  --panel2:#112720;
+  --green:#b7edc5;
+  --gold:#e5c88a;
+  --white:#f4f4eb;
+  --muted:#9baea5;
+  --border:rgba(209,235,216,.13);
+  --plum:#35213b;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:'DM Sans',sans-serif;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1160px,90%);margin:auto}
+img{max-width:100%;display:block}
+
+/* Atmospheric background */
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-2;
+  background:
+   radial-gradient(ellipse at 8% 12%,rgba(48,131,91,.19),transparent 34%),
+   radial-gradient(ellipse at 90% 38%,rgba(119,64,132,.14),transparent 31%),
+   radial-gradient(ellipse at 48% 95%,rgba(188,152,77,.08),transparent 35%);
+}
+.ambient{
+  position:fixed;
+  width:390px;height:390px;
+  border-radius:50%;
+  filter:blur(100px);
+  opacity:.12;
+  pointer-events:none;
+  z-index:-1;
+  animation:float 12s ease-in-out infinite alternate;
+}
+.ambient.one{background:#4bd58b;top:10%;left:-250px}
+.ambient.two{background:#a85bba;right:-260px;top:45%;animation-delay:-5s}
+@keyframes float{to{transform:translate(80px,50px) scale(1.15)}}
+
+/* Navigation */
+.topline{
+  background:#c5e5c7;
+  color:#14251b;
+  text-align:center;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:9px 12px;
+  font-weight:700;
+}
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(7,19,15,.88);
+  backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  min-height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{
+  width:43px;height:43px;
+  border:1px solid rgba(183,237,197,.5);
+  border-radius:14px;
+  display:grid;place-items:center;
+  color:var(--green);
+  font-size:20px;
+  background:linear-gradient(140deg,#193a2b,#0a1510);
+  box-shadow:0 0 25px #65b98312;
+}
+.brand strong{
+  display:block;
+  font:800 14px 'Manrope',sans-serif;
+  letter-spacing:1px;
+}
+.brand small{
+  display:block;
+  font-size:9px;
+  letter-spacing:2.5px;
+  color:var(--gold);
+}
+.navlinks{display:flex;align-items:center;gap:27px}
+.navlinks a{font-size:12px;color:#c1ccc5;transition:.25s}
+.navlinks a:hover{color:var(--green)}
+.nav-cta,.btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  padding:13px 20px;
+  border-radius:8px;
+  border:1px solid transparent;
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform .25s,background .25s,border .25s;
+}
+.nav-cta,.btn-primary{
+  background:var(--green);
+  color:#102219;
+}
+.nav-cta:hover,.btn-primary:hover{transform:translateY(-3px);background:#d4f3da}
+.btn-outline{
+  border-color:var(--border);
+  color:var(--white);
+  background:rgba(255,255,255,.025);
+}
+.btn-outline:hover{border-color:var(--green);transform:translateY(-3px)}
+.menu-toggle{
+  display:none;
+  background:none;
+  border:1px solid var(--border);
+  color:white;
+  width:43px;height:43px;
+  border-radius:9px;
+  font-size:22px;
+}
+
+/* Hero */
+.hero{padding:82px 0 72px;position:relative}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.03fr .97fr;
+  gap:55px;
+  align-items:center;
+}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 12px;
+  border:1px solid rgba(183,237,197,.19);
+  background:rgba(183,237,197,.04);
+  border-radius:30px;
+  color:var(--green);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:9px;
+  font-weight:700;
+}
+.dot{
+  width:6px;height:6px;
+  border-radius:50%;
+  background:#a7e8b6;
+  box-shadow:0 0 12px #a7e8b6;
+}
+h1,h2,h3{font-family:'Manrope',sans-serif}
+h1{
+  font-size:clamp(43px,6.1vw,78px);
+  line-height:1.06;
+  letter-spacing:-4px;
+  margin:26px 0 23px;
+  font-weight:800;
+}
+h1 .accent{
+  display:block;
+  color:var(--green);
+}
+h1 .gold{color:var(--gold)}
+.hero-copy{
+  color:#b0beb5;
+  font-size:14px;
+  max-width:490px;
+  line-height:1.95;
+}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}
+.hero-meta{
+  display:flex;gap:23px;flex-wrap:wrap;
+  margin-top:31px;padding-top:22px;
+  border-top:1px solid var(--border);
+}
+.meta-item{font-size:10px;color:var(--muted)}
+.meta-item strong{display:block;color:#e4ece5;font-size:11px;margin-bottom:3px}
+
+/* Hero art */
+.hero-art{
+  min-height:485px;
+  border-radius:24px;
+  border:1px solid rgba(183,237,197,.19);
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    radial-gradient(ellipse at 50% 40%,#315342 0%,#162b21 37%,#0b1712 75%);
+}
+.hero-art:before{
+  content:"";
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(183,237,197,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(183,237,197,.055) 1px,transparent 1px);
+  background-size:35px 35px;
+  mask-image:linear-gradient(to bottom,black,transparent);
+}
+.art-ring{
+  position:absolute;width:330px;height:330px;
+  border:1px solid #c0e9c326;border-radius:50%;
+}
+.art-ring.r2{width:265px;height:265px;border-color:#e5c88a35}
+.art-ring.r3{width:390px;height:390px;border-style:dashed;border-color:#b7edc51c}
+.phone{
+  width:190px;height:360px;
+  position:relative;z-index:2;
+  border:5px solid #bdc7bd;
+  border-radius:31px;
+  background:linear-gradient(155deg,#17251d,#080e0b 65%);
+  box-shadow:0 35px 90px #000a,0 0 60px #a3e6b018;
+  transform:rotate(-7deg);
+  padding:9px;
+  animation:phoneFloat 6s ease-in-out infinite;
+}
+@keyframes phoneFloat{50%{transform:rotate(-4deg) translateY(-12px)}}
+.phone-screen{
+  height:100%;width:100%;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  background:
+    radial-gradient(ellipse at 70% 30%,#d8c28a44,transparent 30%),
+    radial-gradient(ellipse at 25% 75%,#42a97965,transparent 40%),
+    linear-gradient(145deg,#183c2b,#0a120e 75%);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+}
+.phone-screen:before{
+  content:"";
+  position:absolute;inset:0;
+  background:repeating-linear-gradient(125deg,transparent 0 23px,#c5edcf0c 24px 25px);
+}
+.phone-notch{
+  position:absolute;top:9px;
+  width:65px;height:15px;
+  border-radius:20px;background:#030805;
+}
+.phone-logo{font-size:37px;color:var(--green);position:relative}
+.phone-screen small{font-size:8px;letter-spacing:3px;margin-top:8px;color:#d9e8d9;position:relative}
+.phone-screen .screen-label{
+  position:absolute;bottom:30px;font-size:8px;
+  letter-spacing:2px;color:var(--gold);
+}
+.floating-card{
+  position:absolute;z-index:4;
+  background:rgba(10,26,18,.88);
+  backdrop-filter:blur(16px);
+  border:1px solid #c3e8c22a;
+  padding:15px 17px;
+  border-radius:13px;
+  box-shadow:0 20px 50px #0005;
+}
+.floating-card.left{left:18px;top:80px}
+.floating-card.right{right:15px;bottom:73px}
+.floating-card strong{display:block;font-size:12px}
+.floating-card span{color:var(--muted);font-size:9px}
+.floating-card .price{color:var(--gold);font-weight:700;font-size:16px}
+
+/* Trust strip */
+.trust-strip{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  background:#ffffff04;
+}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust-item{
+  text-align:center;padding:22px 10px;
+  border-right:1px solid var(--border);
+}
+.trust-item:last-child{border:0}
+.trust-item strong{font-size:12px;display:block}
+.trust-item span{font-size:10px;color:var(--muted)}
+
+/* Sections */
+section{padding:91px 0}
+.section-head{max-width:650px;margin-bottom:38px}
+.section-kicker{
+  color:var(--gold);font-size:10px;
+  letter-spacing:3px;text-transform:uppercase;font-weight:700;
+}
+h2{
+  font-size:clamp(31px,4.2vw,49px);
+  letter-spacing:-2px;line-height:1.2;
+  margin:13px 0 15px;
+}
+.section-head p{color:var(--muted);font-size:13px;line-height:1.9}
+.section-head.center{text-align:center;margin-left:auto;margin-right:auto}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:17px;
+}
+.service-card{
+  position:relative;overflow:hidden;
+  background:linear-gradient(145deg,#13271e,#0a1711);
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:26px 23px;
+  transition:.3s;
+}
+.service-card:hover{
+  transform:translateY(-7px);
+  border-color:#b7edc55c;
+  box-shadow:0 22px 55px #0003;
+}
+.service-card.featured{
+  background:linear-gradient(145deg,#1b3325,#15231d 65%,#29213a);
+  border-color:#b7edc54a;
+}
+.service-icon{
+  width:49px;height:49px;border-radius:13px;
+  display:grid;place-items:center;
+  background:#b7edc510;border:1px solid #b7edc526;
+  font-size:22px;margin-bottom:25px;
+}
+.service-card .tag{
+  position:absolute;right:17px;top:18px;
+  font-size:8px;letter-spacing:1px;
+  text-transform:uppercase;color:var(--gold);
+}
+.service-card h3{font-size:17px;margin-bottom:9px}
+.service-card p{font-size:12px;color:var(--muted);min-height:61px;line-height:1.8}
+.service-price{margin:20px 0 17px}
+.service-price small{display:block;color:var(--muted);font-size:10px}
+.service-price strong{font:800 28px 'Manrope',sans-serif;color:var(--green)}
+.service-price strong span{font-size:12px;color:var(--muted);font-weight:400}
+.service-link{
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid var(--border);padding-top:15px;
+  font-size:11px;color:var(--green);font-weight:700;
+}
+
+/* About */
+.about-grid{
+  display:grid;grid-template-columns:.9fr 1.1fr;
+  gap:65px;align-items:center;
+}
+.about-visual{
+  min-height:420px;border-radius:22px;
+  border:1px solid var(--border);
+  overflow:hidden;position:relative;
+  background:linear-gradient(145deg,#172e22,#09130e 70%,#29203a);
+  display:grid;place-items:center;
+}
+.about-orbit{
+  width:270px;height:270px;border:1px solid #b7edc53a;
+  border-radius:50%;display:grid;place-items:center;
+  box-shadow:0 0 100px #61be7912;
+}
+.about-orbit-inner{
+  width:190px;height:190px;border:1px dashed #e5c88a55;
+  border-radius:50%;display:grid;place-items:center;
+  font-size:78px;color:var(--green);
+}
+.about-caption{
+  position:absolute;bottom:22px;left:22px;right:22px;
+  padding:17px;background:#08140ee8;
+  border:1px solid var(--border);border-radius:12px;
+}
+.about-caption strong{font-size:12px;display:block}
+.about-caption span{font-size:10px;color:var(--muted)}
+.about-copy>p{font-size:13px;color:var(--muted);line-height:2;margin-bottom:22px}
+.benefits{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.benefit{display:flex;gap:12px;align-items:flex-start}
+.check{
+  flex-shrink:0;width:23px;height:23px;border-radius:50%;
+  background:#b7edc51b;color:var(--green);
+  display:grid;place-items:center;font-size:12px;
+}
+.benefit strong{display:block;font-size:12px}
+.benefit span{font-size:10px;color:var(--muted)}
+
+/* Process */
+.process-section{background:#ffffff03;border-block:1px solid var(--border)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.process-card{padding:23px 19px;border-top:1px solid #b7edc547}
+.step-number{color:var(--gold);font-size:11px;letter-spacing:2px}
+.process-card h3{font-size:15px;margin:17px 0 9px}
+.process-card p{font-size:11px;color:var(--muted);line-height:1.9}
+
+/* Price note */
+.price-note{
+  margin-top:25px;padding:16px 18px;
+  border:1px solid #e5c88a32;border-radius:10px;
+  background:#e5c88a08;
+  font-size:11px;color:#c8c4b7;
+}
+.price-note strong{color:var(--gold)}
+
+/* FAQ */
+.faq-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:65px}
+.faq-list{display:grid;gap:10px}
+details{
+  border:1px solid var(--border);
+  background:#ffffff03;border-radius:12px;
+  padding:17px 20px;
+}
+summary{
+  cursor:pointer;list-style:none;
+  font-size:12px;font-weight:700;
+  display:flex;justify-content:space-between;gap:20px;
+}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--green);font-size:19px}
+details[open] summary:after{content:"-"}
+details p{font-size:12px;color:var(--muted);line-height:1.9;padding-top:12px}
+
+/* Contact */
+.contact-box{
+  display:grid;grid-template-columns:1fr .8fr;gap:40px;
+  padding:42px;border:1px solid #b7edc52c;
+  border-radius:23px;
+  background:
+    radial-gradient(ellipse at 0 100%,#32634440,transparent 55%),
+    linear-gradient(135deg,#12261c,#10171a 70%,#241a2b);
+}
+.contact-box h2{max-width:520px}
+.contact-box p{color:var(--muted);font-size:13px;line-height:1.9}
+.contact-details{display:grid;gap:13px;align-content:center}
+.contact-row{
+  display:flex;gap:13px;align-items:center;
+  padding:16px;border:1px solid var(--border);
+  border-radius:11px;background:#07130f8a;
+}
+.contact-row .symbol{font-size:19px;color:var(--gold)}
+.contact-row small{display:block;color:var(--muted);font-size:10px}
+.contact-row strong{display:block;font-size:12px}
+
+/* Footer */
+footer{margin-top:85px;border-top:1px solid var(--border);padding:35px 0}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+footer p{font-size:10px;color:var(--muted)}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.footer-links a{font-size:10px;color:var(--muted)}
+.footer-links a:hover{color:var(--green)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.whatsapp-float{
+  position:fixed;bottom:20px;right:20px;z-index:90;
+  width:53px;height:53px;border-radius:50%;
+  background:#b7edc5;color:#092015;
+  display:grid;place-items:center;
+  box-shadow:0 8px 30px #0006;
+  font-size:23px;font-weight:700;
+  transition:.2s;
+}
+.whatsapp-float:hover{transform:scale(1.08)}
+
+/* Responsive */
+@media(max-width:900px){
+ .hero-grid{gap:25px}
+ .navlinks{gap:15px}
+ .nav-cta{padding:11px 13px}
+ .about-grid{gap:35px}
+ .contact-box{padding:30px}
+}
+@media(max-width:700px){
+ .container{width:min(100% - 34px,540px)}
+ .topline{font-size:9px;letter-spacing:1.3px}
+ .nav{min-height:70px}
+ .brand strong{font-size:12px}
+ .brand-mark{width:39px;height:39px}
+ .menu-toggle{display:block}
+ .nav-cta{display:none}
+ .navlinks{
+   display:none;position:absolute;top:70px;left:0;right:0;
+   background:#09160f;border-bottom:1px solid var(--border);
+   padding:20px 5%;flex-direction:column;align-items:stretch;gap:0;
+ }
+ .navlinks.open{display:flex}
+ .navlinks a{padding:13px 0;border-bottom:1px solid var(--border)}
+ .hero{padding:56px 0 45px}
+ .hero-grid{grid-template-columns:1fr;gap:37px}
+ h1{font-size:clamp(45px,12vw,65px);letter-spacing:-2.5px}
+ .hero-copy{font-size:13px}
+ .hero-art{min-height:390px}
+ .phone{transform:scale(.84) rotate(-7deg)}
+ @keyframes phoneFloat{50%{transform:scale(.84) rotate(-4deg) translateY(-12px)}}
+ .art-ring{width:270px;height:270px}
+ .art-ring.r2{width:220px;height:220px}
+ .art-ring.r3{width:315px;height:315px}
+ .floating-card.left{left:10px;top:50px}
+ .floating-card.right{right:9px;bottom:45px}
+ .floating-card{padding:11px 12px}
+ .trust-grid{grid-template-columns:1fr 1fr}
+ .trust-item:nth-child(2){border-right:0}
+ .trust-item:nth-child(-n+2){border-bottom:1px solid var(--border)}
+ section{padding:66px 0}
+ .services-grid{grid-template-columns:1fr}
+ .service-card p{min-height:0}
+ .about-grid{grid-template-columns:1fr;gap:30px}
+ .about-visual{min-height:330px}
+ .benefits{gap:18px 10px}
+ .process-grid{grid-template-columns:1fr 1fr;gap:22px 12px}
+ .faq-layout{grid-template-columns:1fr;gap:18px}
+ .contact-box{grid-template-columns:1fr;padding:25px 19px;gap:22px}
+ .contact-box h2{font-size:34px}
+ .footer-inner{align-items:flex-start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+ .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+<div class="ambient one"></div>
+<div class="ambient two"></div>
+
+<div class="topline">Precision repairs · Premium care · Nehru Place, Delhi NCR</div>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand" aria-label="The Mobile Specialist home">
+      <span class="brand-mark">?</span>
+      <span>
+        <strong>THE MOBILE SPECIALIST</strong>
+        <small>DEVICE CARE STUDIO</small>
+      </span>
+    </a>
+
+    <nav class="navlinks" id="navlinks">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">Our Approach</a>
+      <a href="#process">How It Works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="nav-cta" href="tel:+919999680958">Call Now ?</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">?</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-content reveal">
+      <div class="eyebrow"><span class="dot"></span> NEHRU PLACE · DELHI NCR</div>
+
+      <h1>
+        Your Device.
+        <span class="accent">Our Expertise.</span>
+        <span class="gold">Restored.</span>
+      </h1>
+
+      <p class="hero-copy">
+        Premium mobile repair, delivered with precision.
+        From damaged displays to tired batteries and charging
+        faults, give your device the attention it deserves.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#services" class="btn btn-primary">Explore Repairs ?</a>
+        <a href="tel:+919999680958" class="btn btn-outline">? Call Now</a>
+      </div>
+
+      <div class="hero-meta">
+        <div class="meta-item">
+          <strong>01 / PRECISION</strong>
+          Careful diagnostics
+        </div>
+        <div class="meta-item">
+          <strong>02 / TRANSPARENCY</strong>
+          Clear starting prices
+        </div>
+        <div class="meta-item">
+          <strong>03 / CONVENIENCE</strong>
+          Easy enquiries
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-art reveal" aria-label="Abstract premium smartphone illustration">
+      <div class="art-ring"></div>
+      <div class="art-ring r2"></div>
+      <div class="art-ring r3"></div>
+
+      <div class="floating-card left">
+        <span>SCREEN REPLACEMENT</span>
+        <strong class="price">?1,499+</strong>
+        <span>Starting price</span>
+      </div>
+
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="phone-logo">?</div>
+          <small>DEVICE CARE</small>
+          <span class="screen-label">ENGINEERED WITH CARE</span>
+        </div>
+      </div>
+
+      <div class="floating-card right">
+        <span>YOUR LOCAL REPAIR STUDIO</span>
+        <strong>NEHRU PLACE</strong>
+        <span>Delhi NCR, India</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="container trust-grid">
+    <div class="trust-item">
+      <strong>Transparent Pricing</strong>
+      <span>Know the starting cost</span>
+    </div>
+    <div class="trust-item">
+      <strong>Careful Diagnostics</strong>
+      <span>Identify the real issue</span>
+    </div>
+    <div class="trust-item">
+      <strong>Quality-Focused Repairs</strong>
+      <span>Parts selected for compatibility</span>
+    </div>
+    <div class="trust-item">
+      <strong>Local Convenience</strong>
+      <span>Nehru Place, Delhi NCR</span>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-kicker">THE REPAIR COLLECTION</span>
+      <h2>Expert care. <span style="color:var(--green)">Clear pricing.</span></h2>
+      <p>Explore our essential mobile repair services. Final pricing depends on your device model, part quality and the issue diagnosed.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card featured reveal">
+        <span class="tag">POPULAR SERVICE</span>
+        <div class="service-icon">?</div>
+        <h3>Screen Replacement</h3>
+        <p>Solutions for cracked displays, touch problems and damaged screens, subject to model compatibility.</p>
+        <div class="service-price">
+          <small>Starting from</small>
+          <strong>?1,499<span> / onwards</span></strong>
+        </div>
+        <a class="service-link" href="tel:+919999680958">
+          Enquire about screens <span>?</span>
+        </a>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon">?</div>
+        <h3>Battery Replacement</h3>
+        <p>For battery drain, reduced backup and batteries that no longer perform as expected.</p>
+        <div class="service-price">
+          <small>Starting from</small>
+          <strong>?999<span> / onwards</span></strong>
+        </div>
+        <a class="service-link" href="tel:+919999680958">
+          Enquire about batteries <span>?</span>
+        </a>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon">?</div>
+        <h3>Charging Port Repair</h3>
+        <p>Get charging issues, loose connections and charging-port faults checked by a technician.</p>
+        <div class="service-price">
+          <small>Starting from</small>
+          <strong>?599<span> / onwards</span></strong>
+        </div>
+        <a class="service-link" href="tel:+919999680958">
+          Enquire about charging <span>?</span>
+        </a>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon">?</div>
+        <h3>Camera Repair</h3>
+        <p>Assistance with camera faults, focusing problems and damaged camera components.</p>
+        <div class="service-price">
+          <small>Price after diagnosis</small>
+          <strong style="font-size:22px">Get a Quote</strong>
+        </div>
+        <a class="service-link" href="#contact">Discuss your issue <span>?</span></a>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon">?</div>
+        <h3>Speaker & Microphone</h3>
+        <p>For unclear calls, low sound, speaker faults and microphone-related issues.</p>
+        <div class="service-price">
+          <small>Price after diagnosis</small>
+          <strong style="font-size:22px">Get a Quote</strong>
+        </div>
+        <a class="service-link" href="#contact">Discuss your issue <span>?</span></a>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon">?</div>
+        <h3>Software & Diagnostics</h3>
+        <p>Help with supported software issues, troubleshooting and device diagnostics.</p>
+        <div class="service-price">
+          <small>Price after diagnosis</small>
+          <strong style="font-size:22px">Get a Quote</strong>
+        </div>
+        <a class="service-link" href="#contact">Discuss your issue <span>?</span></a>
+      </article>
+    </div>
+
+    <div class="price-note reveal">
+      <strong>Pricing note:</strong> Advertised prices are starting prices, not guaranteed prices for every phone. The actual quote should be confirmed after checking the device model, component availability and repair requirements.
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <div class="about-orbit">
+        <div class="about-orbit-inner">?</div>
+      </div>
+      <div class="about-caption">
+        <strong>THE MOBILE SPECIALIST</strong>
+        <span>A thoughtful approach to everyday technology.</span>
+      </div>
+    </div>
+
+    <div class="about-copy reveal">
+      <span class="section-kicker">BEYOND THE REPAIR</span>
+      <h2>Technology deserves <span style="color:var(--green)">better care.</span></h2>
+      <p>
+        A phone is more than a device. It keeps you connected to work,
+        family and the things that matter. Our approach is centred on
+        understanding the issue, explaining the available options and
+        helping you make an informed repair decision.
+      </p>
+
+      <div class="benefits">
+        <div class="benefit">
+          <span class="check">?</span>
+          <div><strong>Clear Estimates</strong><span>Discuss pricing before proceeding.</span></div>
+        </div>
+        <div class="benefit">
+          <span class="check">?</span>
+          <div><strong>Device-Specific Care</strong><span>Check model and compatibility.</span></div>
+        </div>
+        <div class="benefit">
+          <span class="check">?</span>
+          <div><strong>Informed Choices</strong><span>Understand your repair options.</span></div>
+        </div>
+        <div class="benefit">
+          <span class="check">?</span>
+          <div><strong>Convenient Contact</strong><span>Call to discuss your problem.</span></div>
+        </div>
+      </div>
+
+      <div style="margin-top:27px">
+        <a href="tel:+919999680958" class="btn btn-primary">Talk to Our Team ?</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process-section" id="process">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-kicker">A SIMPLE PROCESS</span>
+      <h2>From issue to <span style="color:var(--green)">solution.</span></h2>
+      <p>A straightforward repair journey with communication at every important step.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-card reveal">
+        <span class="step-number">STEP / 01</span>
+        <h3>Tell Us the Issue</h3>
+        <p>Call and describe your device, model and the problem you are facing.</p>
+      </div>
+      <div class="process-card reveal">
+        <span class="step-number">STEP / 02</span>
+        <h3>Get It Checked</h3>
+        <p>Have the device assessed to identify the likely cause of the issue.</p>
+      </div>
+      <div class="process-card reveal">
+        <span class="step-number">STEP / 03</span>
+        <h3>Approve the Quote</h3>
+        <p>Review the repair options and confirm the price before work begins.</p>
+      </div>
+      <div class="process-card reveal">
+        <span class="step-number">STEP / 04</span>
+        <h3>Check Your Device</h3>
+        <p>Review the completed repair and ask about any applicable warranty terms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container faq-layout">
+    <div class="section-head reveal">
+      <span class="section-kicker">GOOD TO KNOW</span>
+      <h2>Your questions, <span style="color:var(--green)">answered.</span></h2>
+      <p>Important details to understand before arranging a repair.</p>
+      <div style="margin-top:22px">
+        <a href="tel:+919999680958" class="btn btn-outline">Ask a Question ?</a>
+      </div>
+    </div>
+
+    <div class="faq-list reveal">
+      <details>
+        <summary>What is the screen replacement price?</summary>
+        <p>Screen replacement starts at ?1,499. The final price depends on your phone model, screen type and component availability. Confirm your quote before approving the repair.</p>
+      </details>
+      <details>
+        <summary>How much does battery replacement cost?</summary>
+        <p>Battery replacement starts at ?999. The price can vary according to the device and the compatible replacement battery required.</p>
+      </details>
+      <details>
+        <summary>What is the charging port repair price?</summary>
+        <p>Charging port service starts at ?599. The technician should first determine whether the issue comes from the port, cable, battery or another component.</p>
+      </details>
+      <details>
+        <summary>How long will my repair take?</summary>
+        <p>Repair time depends on the fault, device model, component availability and any additional testing. Contact us to discuss the expected turnaround for your device.</p>
+      </details>
+      <details>
+        <summary>Will my data remain safe?</summary>
+        <p>Back up your important data before handing over your device whenever possible. Ask the technician whether your repair requires access to the device or a reset, and never share your account password unnecessarily.</p>
+      </details>
+      <details>
+        <summary>Where are you located?</summary>
+        <p>The Mobile Specialist serves customers in Nehru Place, Delhi NCR. Contact us to confirm the exact shop address and directions before visiting.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box reveal">
+      <div>
+        <span class="section-kicker">LET'S GET YOU CONNECTED</span>
+        <h2>Ready to give your phone a <span style="color:var(--green)">fresh start?</span></h2>
+        <p>Tell us your phone model and what is wrong. We can discuss the repair options and help you understand the next step.</p>
+        <div class="hero-buttons">
+          <a href="tel:+919999680958" class="btn btn-primary">? Call The Mobile Specialist</a>
+          <a href="https://wa.me/919999680958?text=Hello%20The%20Mobile%20Specialist%2C%20I%20need%20a%20mobile%20repair%20quote." target="_blank" rel="noopener" class="btn btn-outline">WhatsApp ?</a>
+        </div>
+      </div>
+
+      <div class="contact-details">
+        <a class="contact-row" href="tel:+919999680958">
+          <span class="symbol">?</span>
+          <span><small>CALL OUR TEAM</small><strong>+91 99996 80958</strong></span>
+        </a>
+        <div class="contact-row">
+          <span class="symbol">?</span>
+          <span><small>LOCATION</small><strong>Nehru Place, Delhi NCR</strong></span>
+        </div>
+        <a class="contact-row" href="https://www.google.com/maps/search/?api=1&query=Nehru+Place+Delhi" target="_blank" rel="noopener">
+          <span class="symbol">?</span>
+          <span><small>FIND THE AREA</small><strong>Open Google Maps</strong></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <a href="#home" class="brand">
+      <span class="brand-mark">?</span>
+      <span><strong>THE MOBILE SPECIALIST</strong><small>DEVICE CARE STUDIO</small></span>
+    </a>
+    <p>© <span id="year"></span> The Mobile Specialist. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQs</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-float"
+   href="https://wa.me/919999680958?text=Hello%2C%20I%20need%20help%20with%20a%20mobile%20repair."
+   target="_blank" rel="noopener" aria-label="Chat on WhatsApp">W</a>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const navlinks = document.getElementById('navlinks');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = navlinks.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.textContent = isOpen ? '×' : '?';
+});
+
+navlinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navlinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = '?';
+  });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(element => {
+  observer.observe(element);
+});
+</script>
+</body>
+</html>
+```
